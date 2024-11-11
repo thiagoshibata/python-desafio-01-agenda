@@ -123,9 +123,12 @@ while True:
   
   elif escolha == "6":
     listarContatos(contatos)
-    indice_contato = int(input("\nInforme o número do contato que deseja excluir: "))
-    deletarContato(contatos,indice_contato)
-    listarContatos(contatos)
+    if len(contatos) > 0:
+      indice_contato = int(input("\nInforme o número do contato que deseja excluir: "))
+      deletarContato(contatos,indice_contato)
+      listarContatos(contatos)
+    else:
+      print("\n-- Lista de contatos vazia! ---")
 
   elif escolha == "7":
     break
